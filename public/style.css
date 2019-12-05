@@ -1,7 +1,35 @@
 body {
-    background-color: red
+	background-color: beige;
+	display: flex;
 }
 
-.App {
-    color: blue
+.search-form {
+	display: inline-flex;
+	height: 40px;
+}
+
+.search-box {
+	width: 75vw;
+	border-radius: 10px;
+	font-size: 2vw;
+	text-align: center;
+}
+
+.search-button {
+	border-radius: 10px;
+	font-size: 2vw;
+	width: 10vw;
+	text-align: center;
+}
+
+.recipe-container {
+	display: inline-block;
+	flex-wrap: wrap;
+	margin: 20px;
+	justify-content: space-between;
+	width: 300px;
+}
+
+.recipe-container > button {
+	width: 33.33%;
 }
