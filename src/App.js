@@ -53,7 +53,7 @@ const App = () => {
 					Search
 				</button>
 			</form>
-			<div>{recipes.map((recipe) => <Recipe name={recipe.recipe.label} image={recipe.recipe.image} />)}</div>
+			<div>{recipes.map((recipe) => <Recipe name={recipe.recipe.label} image={recipe.recipe.image} site={recipe.recipe.url}/>)}</div>
 		</div>
 	);
 };

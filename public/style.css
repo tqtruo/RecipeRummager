@@ -1,6 +1,7 @@
 body {
 	background-color: beige;
 	display: flex;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .search-form {
@@ -30,6 +31,42 @@ body {
 	width: 300px;
 }
 
+
 .recipe-container > button {
+	
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+	text-decoration: none;
+	background-color: white;
+	border: solid #4CAF50 1px;
 	width: 33.33%;
 }
+
+.recipe-container > button:hover {
+	background-color: #4CAF50;
+	color: white;
+	width: 33.33%;
+}
+ 
+.recipe-container > a:link, a:visited {
+	-webkit-transition-duration: 0.4s; 
+	transition-duration: 0.4s;
+	display: inline-block;
+	background-color: white;
+	color: black;
+	font-size: 13.33px;
+	border: solid #4CAF50 1px;
+	padding: 1px 28.255px 1px 28.255px;
+	text-decoration: none;
+}
+
+.recipe-container > a:hover, a:active {
+	display: inline-block;
+	background-color: #4CAF50;
+	color: white;
+	font-size: 13.33px;
+	border: solid #4CAF50 1px;
+	padding: 1px 28.255px 1px 28.255px;
+	text-decoration: none;
+}
+

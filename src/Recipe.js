@@ -7,7 +7,9 @@ const Recipe = (props) => {
 			<img src={props.image} />
 			<button>Nutrition</button>
 			<button>Ingredients</button>
-			<button>Recipe</button>
+			<a href={props.site} target="_blank">
+				Recipe
+			</a>
 		</div>
 	);
 };
