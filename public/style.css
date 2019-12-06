@@ -12,14 +12,14 @@ body {
 .search-box {
 	width: 75vw;
 	border-radius: 10px;
-	font-size: 2vw;
+	font-size: 24px;
 	text-align: center;
 }
 
 .search-button {
 	border-radius: 10px;
-	font-size: 1.5vw;
-	width: 10vw;
+	font-size: 20px;
+	width: 100px;
 	text-align: center;
 }
 
@@ -29,6 +29,7 @@ body {
 	margin: 20px;
 	justify-content: space-between;
 	width: 300px;
+	text-align:center;
 }
 
 
@@ -40,12 +41,14 @@ body {
 	background-color: white;
 	border: solid #4CAF50 1px;
 	width: 33.33%;
+	border-radius: 5px;
 }
 
 .recipe-container > button:hover {
 	background-color: #4CAF50;
 	color: white;
 	width: 33.33%;
+	border-radius: 5px;
 }
  
 .recipe-container > a:link, a:visited {
@@ -58,6 +61,7 @@ body {
 	border: solid #4CAF50 1px;
 	padding: 1px 28.255px 1px 28.255px;
 	text-decoration: none;
+	border-radius: 5px;
 }
 
 .recipe-container > a:hover, a:active {
@@ -68,5 +72,6 @@ body {
 	border: solid #4CAF50 1px;
 	padding: 1px 28.255px 1px 28.255px;
 	text-decoration: none;
+	border-radius: 5px;
 }
 
