@@ -7,7 +7,7 @@ body {
 .search-form {
 	display: inline-flex;
 	height: 40px;
-	justify-content: space-between;
+	align-content: center;
 }
 
 .search-box {
@@ -29,6 +29,15 @@ body {
 	flex-wrap: wrap;
 	margin: 20px;
 	width: 300px;
+}
+
+.recipe-container > h3 {
+	vertical-align: top;
+	text-align: center;
+}
+
+.recipe-container > img {
+	top: 150px;
 	text-align: center;
 }
 
@@ -120,10 +129,6 @@ a:active {
 	margin: auto;
 	border-radius: 20px;
 	background: white;
-}
-
-.ingredients > h2 {
-	text-align: center;
 }
 
 .ingredients > button {

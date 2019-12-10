@@ -36,14 +36,21 @@ const App = () => {
 
 		//Setting all the ingredients to be hidden
 		ingredientsHide.length = 0;
+		let newIngred = [];
 		for (let i = 0; i < data.hits.length; i++) {
-			ingredientsHide.push(false);
+			newIngred.push(false);
 		}
+		toggleIngredients(newIngred);
 
+		//Setting all nutritioninfo to be hidden
 		nutrientHide.length = 0;
+		let newNutr = [];
 		for (let i = 0; i < data.hits.length; i++) {
-			nutrientHide.push(false);
+			newNutr.push(false);
 		}
+		toggleNutrition(newNutr);
+
+		setClass('outer-container');
 	}
 
 	//Set state of search
