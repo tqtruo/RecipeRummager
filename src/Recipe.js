@@ -11,6 +11,7 @@ const Recipe = (props) => {
 			}
 		}
 		props.toggleNutrition(nutrArray);
+		console.log('nutr ', props.nutr);
 	};
 
 	const ingredButton = () => {
@@ -23,6 +24,7 @@ const Recipe = (props) => {
 			}
 		}
 		props.toggleIngredients(ingredArray);
+		console.log('ingred ', props.ingred);
 	};
 	return (
 		<div className="recipe-container">

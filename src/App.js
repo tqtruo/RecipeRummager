@@ -22,7 +22,7 @@ const App = () => {
 	/* 	const [ caloriesLow, setCalorieMin ] = useState('');
 	const [ caloriesHigh, setCalorieMax ] = useState(''); */
 
-	const request = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=10`;
+	const request = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=100`;
 
 	//Get All Recipes
 	async function fetchRecipes() {
@@ -77,26 +77,41 @@ const App = () => {
 					Search
 				</button>
 			</form>
-			<div>
+			<div className="recipes">
 				{recipes.map((recipe, index) => (
-					<div>
-						<Recipe
-							name={recipe.recipe.label}
-							image={recipe.recipe.image}
-							site={recipe.recipe.url}
-							toggleNutrition={toggleNutrition}
-							ingred={ingredientsHide}
-							toggleIngredients={toggleIngredients}
-							nutr={nutrientHide}
-							index={index}
-							ingredients={recipe.recipe.ingredientLines}
-						/>
-						{ingredientsHide[index] && (
-							<Ingredients name={recipe.recipe.label} ingredients={recipe.recipe.ingredientLines} />
-						)}
-						{nutrientHide[index] && (
-							<Nutrition name={recipe.recipe.label} toggleNutrition={toggleNutrition} />
-						)}
+					<div className="outer-container">
+						<div>
+							<Recipe
+								name={recipe.recipe.label}
+								image={recipe.recipe.image}
+								site={recipe.recipe.url}
+								toggleNutrition={toggleNutrition}
+								ingred={ingredientsHide}
+								toggleIngredients={toggleIngredients}
+								nutr={nutrientHide}
+								index={index}
+								ingredients={recipe.recipe.ingredientLines}
+							/>
+						</div>
+						<div>
+							{ingredientsHide[index] && (
+								<Ingredients
+									name={recipe.recipe.label}
+									ingredients={recipe.recipe.ingredientLines}
+									toggleIngredients={toggleIngredients}
+									ingred={ingredientsHide}
+									index={index}
+								/>
+							)}
+							{nutrientHide[index] && (
+								<Nutrition
+									name={recipe.recipe.label}
+									toggleNutrition={toggleNutrition}
+									nutr={nutrientHide}
+									index={index}
+								/>
+							)}
+						</div>
 					</div>
 				))}
 			</div>

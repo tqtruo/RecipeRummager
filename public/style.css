@@ -27,7 +27,6 @@ body {
 	display: inline-block;
 	flex-wrap: wrap;
 	margin: 20px;
-	justify-content: space-between;
 	width: 300px;
 	text-align: center;
 }
@@ -73,4 +72,85 @@ a:active {
 	padding: 1px 28.255px 1px 28.255px;
 	text-decoration: none;
 	border-radius: 5px;
+}
+
+.nutrition-list {
+	position: fixed;
+	left: 25%;
+	right: 25%;
+	top: 25%;
+	bottom: 25%;
+	margin: auto;
+	border-radius: 20px;
+	background: white;
+}
+
+.nutrition-list > h2 {
+	text-align: center;
+}
+
+.nutrition-list > button {
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	text-decoration: none;
+	background-color: white;
+	border: solid rgb(255, 61, 61) 1px;
+	width: 35px;
+	border-radius: 5px;
+	top: 1px;
+	right: 1px;
+	position: absolute;
+	text-align: center;
+}
+
+.nutrition-list > button:hover {
+	background-color: rgb(255, 61, 61);
+	color: white;
+	width: 35px;
+	border-radius: 5px;
+}
+
+.ingredients {
+	position: fixed;
+	left: 25%;
+	right: 25%;
+	top: 25%;
+	bottom: 25%;
+	margin: auto;
+	border-radius: 20px;
+	background: white;
+}
+
+.ingredients > h2 {
+	text-align: center;
+}
+
+.ingredients > button {
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	text-decoration: none;
+	background-color: white;
+	border: solid rgb(255, 61, 61) 1px;
+	width: 35px;
+	border-radius: 5px;
+	top: 1px;
+	right: 1px;
+	position: absolute;
+	text-align: center;
+}
+
+.ingredients > button:hover {
+	background-color: rgb(255, 61, 61);
+	color: white;
+	width: 35px;
+	border-radius: 5px;
+}
+
+.outer-container {
+	margin: auto;
+}
+
+.recipes {
+	display: flex;
+	flex-wrap: wrap;
 }
