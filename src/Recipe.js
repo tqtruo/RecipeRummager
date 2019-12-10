@@ -1,12 +1,35 @@
 import React from 'react';
 
 const Recipe = (props) => {
+	const nutrButton = () => {
+		let nutrArray = [];
+		for (let i = 0; i < props.nutr.length; i++) {
+			if (i === props.index) {
+				nutrArray.push(true);
+			} else {
+				nutrArray.push(false);
+			}
+		}
+		props.toggleNutrition(nutrArray);
+	};
+
+	const ingredButton = () => {
+		let ingredArray = [];
+		for (let i = 0; i < props.ingred.length; i++) {
+			if (i === props.index) {
+				ingredArray.push(true);
+			} else {
+				ingredArray.push(false);
+			}
+		}
+		props.toggleIngredients(ingredArray);
+	};
 	return (
 		<div className="recipe-container">
 			<h3>{props.name}</h3>
 			<img src={props.image} />
-			<button onClick={() => props.toggleNutrition(true)}>Nutrition</button>
-			<button onClick={() => props.toggleIngredients(true)}>Ingredients</button>
+			<button onClick={() => nutrButton()}>Nutrition</button>
+			<button onClick={() => ingredButton()}>Ingredients</button>
 			<a href={props.site} target="_blank">
 				Recipe
 			</a>

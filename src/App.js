@@ -4,7 +4,6 @@ import Nutrition from './Nutrition';
 import Ingredients from './Ingredients';
 
 const App = () => {
-
 	//API ID/KEY
 	const APP_ID = '8ac29d4b';
 	const APP_KEY = '6e2cd4bcf132e11ab01a06f895fee585';
@@ -15,16 +14,15 @@ const App = () => {
 	const [ query, setQuery ] = useState('');
 
 	//Nutrition popup
-	const [nutrientHide, toggleNutrition] = useState(false);
+	const [ nutrientHide, toggleNutrition ] = useState([]);
 
 	//Ingredients popup
-	const [ingredientsHide, toggleIngredients] = useState(false);
-	
+	const [ ingredientsHide, toggleIngredients ] = useState([]);
+
 	/* 	const [ caloriesLow, setCalorieMin ] = useState('');
 	const [ caloriesHigh, setCalorieMax ] = useState(''); */
-	
+
 	const request = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=10`;
-	
 
 	//Get All Recipes
 	async function fetchRecipes() {
@@ -32,10 +30,19 @@ const App = () => {
 		const data = await response.json();
 		console.log(data);
 		setRecipes(data.hits);
-		toggleIngredients(false);
-		toggleNutrition(false);
+
+		//Setting all the ingredients to be hidden
+		ingredientsHide.length = 0;
+		for (let i = 0; i < data.hits.length; i++) {
+			ingredientsHide.push(false);
+		}
+
+		nutrientHide.length = 0;
+		for (let i = 0; i < data.hits.length; i++) {
+			nutrientHide.push(false);
+		}
 	}
-	
+
 	//Set state of search
 	function getSearch(event) {
 		event.preventDefault();
@@ -47,7 +54,7 @@ const App = () => {
 		event.preventDefault();
 		setQuery(search);
 	}
-	
+
 	const initialLoad = useRef(true);
 	useEffect(
 		() => {
@@ -70,12 +77,28 @@ const App = () => {
 					Search
 				</button>
 			</form>
-			<div>{recipes.map((recipe) => 
-					<Recipe name={recipe.recipe.label} image={recipe.recipe.image} site={recipe.recipe.url} toggleNutrition={toggleNutrition} toggleIngredients={toggleIngredients} ingredients={recipe.recipe.ingredientLines}/>
-					/* {ingredientsHide && <Ingredients name={recipe.recipe.label} ingredients={recipe.recipe.ingredientLines}/>}
-					{nutrientHide && <Nutrition name={recipe.recipe.label} toggleNutrition={toggleNutrition}/>} */
-
-			)}
+			<div>
+				{recipes.map((recipe, index) => (
+					<div>
+						<Recipe
+							name={recipe.recipe.label}
+							image={recipe.recipe.image}
+							site={recipe.recipe.url}
+							toggleNutrition={toggleNutrition}
+							ingred={ingredientsHide}
+							toggleIngredients={toggleIngredients}
+							nutr={nutrientHide}
+							index={index}
+							ingredients={recipe.recipe.ingredientLines}
+						/>
+						{ingredientsHide[index] && (
+							<Ingredients name={recipe.recipe.label} ingredients={recipe.recipe.ingredientLines} />
+						)}
+						{nutrientHide[index] && (
+							<Nutrition name={recipe.recipe.label} toggleNutrition={toggleNutrition} />
+						)}
+					</div>
+				))}
 			</div>
 		</div>
 	);

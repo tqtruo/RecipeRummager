@@ -29,49 +29,48 @@ body {
 	margin: 20px;
 	justify-content: space-between;
 	width: 300px;
-	text-align:center;
+	text-align: center;
 }
 
-
 .recipe-container > button {
-	
-    -webkit-transition-duration: 0.4s; 
-    transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
 	text-decoration: none;
 	background-color: white;
-	border: solid #4CAF50 1px;
+	border: solid #4caf50 1px;
 	width: 33.33%;
 	border-radius: 5px;
 }
 
 .recipe-container > button:hover {
-	background-color: #4CAF50;
+	background-color: #4caf50;
 	color: white;
 	width: 33.33%;
 	border-radius: 5px;
 }
- 
-.recipe-container > a:link, a:visited {
-	-webkit-transition-duration: 0.4s; 
+
+.recipe-container > a:link,
+a:visited {
+	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
 	display: inline-block;
 	background-color: white;
 	color: black;
 	font-size: 13.33px;
-	border: solid #4CAF50 1px;
+	border: solid #4caf50 1px;
 	padding: 1px 28.255px 1px 28.255px;
 	text-decoration: none;
 	border-radius: 5px;
 }
 
-.recipe-container > a:hover, a:active {
+.recipe-container > a:hover,
+a:active {
 	display: inline-block;
-	background-color: #4CAF50;
+	background-color: #4caf50;
 	color: white;
 	font-size: 13.33px;
-	border: solid #4CAF50 1px;
+	border: solid #4caf50 1px;
 	padding: 1px 28.255px 1px 28.255px;
 	text-decoration: none;
 	border-radius: 5px;
 }
-
