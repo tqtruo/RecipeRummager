@@ -19,6 +19,9 @@ const App = () => {
 	//Ingredients popup
 	const [ ingredientsHide, toggleIngredients ] = useState([]);
 
+	//Make background inactive while popup active
+	const [ backgroundClass, setClass ] = useState('outer-container');
+
 	/* 	const [ caloriesLow, setCalorieMin ] = useState('');
 	const [ caloriesHigh, setCalorieMax ] = useState(''); */
 
@@ -80,7 +83,7 @@ const App = () => {
 			<div className="recipes">
 				{recipes.map((recipe, index) => (
 					<div className="outer-container">
-						<div>
+						<div className={backgroundClass}>
 							<Recipe
 								name={recipe.recipe.label}
 								image={recipe.recipe.image}
@@ -91,6 +94,7 @@ const App = () => {
 								nutr={nutrientHide}
 								index={index}
 								ingredients={recipe.recipe.ingredientLines}
+								setClass={setClass}
 							/>
 						</div>
 						<div>
@@ -101,6 +105,7 @@ const App = () => {
 									toggleIngredients={toggleIngredients}
 									ingred={ingredientsHide}
 									index={index}
+									setClass={setClass}
 								/>
 							)}
 							{nutrientHide[index] && (
@@ -109,6 +114,7 @@ const App = () => {
 									toggleNutrition={toggleNutrition}
 									nutr={nutrientHide}
 									index={index}
+									setClass={setClass}
 								/>
 							)}
 						</div>

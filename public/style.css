@@ -7,6 +7,7 @@ body {
 .search-form {
 	display: inline-flex;
 	height: 40px;
+	justify-content: space-between;
 }
 
 .search-box {
@@ -148,6 +149,11 @@ a:active {
 
 .outer-container {
 	margin: auto;
+}
+
+.outer-container-inactive {
+	margin: auto;
+	pointer-events: none;
 }
 
 .recipes {

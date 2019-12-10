@@ -11,6 +11,7 @@ const Recipe = (props) => {
 			}
 		}
 		props.toggleNutrition(nutrArray);
+		props.setClass('outer-container-inactive');
 		console.log('nutr ', props.nutr);
 	};
 
@@ -24,6 +25,7 @@ const Recipe = (props) => {
 			}
 		}
 		props.toggleIngredients(ingredArray);
+		props.setClass('outer-container-inactive');
 		console.log('ingred ', props.ingred);
 	};
 	return (

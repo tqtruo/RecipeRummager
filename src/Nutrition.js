@@ -7,9 +7,10 @@ const Nutrition = (props) => {
 			newNutr.push(false);
 		}
 		props.toggleNutrition(newNutr);
+		props.setClass('outer-container');
 	};
 	return (
-		<div className="nutrition-list">
+		<div className="nutrition-list" id="nutr">
 			<button onClick={() => closeNutr()}>X</button>
 			<h2>{props.name}</h2>
 			<h1>Calories</h1>
