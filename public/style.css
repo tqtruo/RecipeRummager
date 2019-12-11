@@ -6,8 +6,11 @@ body {
 
 .search-form {
 	display: inline-flex;
+	position: fixed;
+	left: 25%;
+	right: 25%;
 	height: 40px;
-	align-content: center;
+	margin-bottom: 20px;
 }
 
 .search-box {
@@ -22,6 +25,41 @@ body {
 	font-size: 20px;
 	width: 100px;
 	text-align: center;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	text-decoration: none;
+	background-color: white;
+	border: solid #4caf50 1px;
+}
+
+.search-button:hover {
+	background-color: #4caf50;
+	color: white;
+}
+
+.loading {
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	position: fixed;
+	top: 25%;
+	right: 25%;
+	left: 25%;
+	bottom: 25%;
+	border-top: 16px solid #00ff00;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+	margin: auto;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 .recipe-container {
@@ -34,11 +72,14 @@ body {
 .recipe-container > h3 {
 	vertical-align: top;
 	text-align: center;
+	height: 40px;
 }
 
 .recipe-container > img {
 	top: 150px;
+	border-radius: 15px;
 	text-align: center;
+	border: solid black 1px;
 }
 
 .recipe-container > button {
@@ -91,8 +132,10 @@ a:active {
 	top: 25%;
 	bottom: 25%;
 	margin: auto;
-	border-radius: 20px;
+	xborder-radius: 20px;
 	background: white;
+	border: solid darkgreen 1px;
+	overflow-y: auto;
 }
 
 .nutrition-list > h2 {
@@ -105,10 +148,11 @@ a:active {
 	text-decoration: none;
 	background-color: white;
 	border: solid rgb(255, 61, 61) 1px;
-	width: 35px;
-	border-radius: 5px;
-	top: 1px;
-	right: 1px;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	top: 0px;
+	right: 0px;
 	position: absolute;
 	text-align: center;
 }
@@ -116,8 +160,9 @@ a:active {
 .nutrition-list > button:hover {
 	background-color: rgb(255, 61, 61);
 	color: white;
-	width: 35px;
-	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
 }
 
 .ingredients {
@@ -127,8 +172,16 @@ a:active {
 	top: 25%;
 	bottom: 25%;
 	margin: auto;
-	border-radius: 20px;
+	xborder-radius: 20px;
 	background: white;
+	padding: 15px;
+	border: solid darkgreen 1px;
+
+	overflow-y: auto;
+}
+
+.ingredients > h2 {
+	text-align: center;
 }
 
 .ingredients > button {
@@ -137,10 +190,11 @@ a:active {
 	text-decoration: none;
 	background-color: white;
 	border: solid rgb(255, 61, 61) 1px;
-	width: 35px;
-	border-radius: 5px;
-	top: 1px;
-	right: 1px;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	top: 0px;
+	right: 0px;
 	position: absolute;
 	text-align: center;
 }
@@ -148,8 +202,9 @@ a:active {
 .ingredients > button:hover {
 	background-color: rgb(255, 61, 61);
 	color: white;
-	width: 35px;
-	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
 }
 
 .outer-container {
@@ -164,4 +219,26 @@ a:active {
 .recipes {
 	display: flex;
 	flex-wrap: wrap;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(93, 93, 93, 0.3);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #4caf50;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #4caf50;
 }

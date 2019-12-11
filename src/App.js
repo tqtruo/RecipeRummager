@@ -22,6 +22,9 @@ const App = () => {
 	//Make background inactive while popup active
 	const [ backgroundClass, setClass ] = useState('outer-container');
 
+	//Loading animation
+	const [ isLoading, setLoading ] = useState(false);
+
 	/* 	const [ caloriesLow, setCalorieMin ] = useState('');
 	const [ caloriesHigh, setCalorieMax ] = useState(''); */
 
@@ -29,8 +32,10 @@ const App = () => {
 
 	//Get All Recipes
 	async function fetchRecipes() {
+		setLoading(true);
 		const response = await fetch(request);
 		const data = await response.json();
+		setLoading(false);
 		console.log(data);
 		setRecipes(data.hits);
 
@@ -88,45 +93,49 @@ const App = () => {
 				</button>
 			</form>
 			<div className="recipes">
-				{recipes.map((recipe, index) => (
-					<div className="outer-container">
-						<div className={backgroundClass}>
-							<Recipe
-								name={recipe.recipe.label}
-								image={recipe.recipe.image}
-								site={recipe.recipe.url}
-								toggleNutrition={toggleNutrition}
-								ingred={ingredientsHide}
-								toggleIngredients={toggleIngredients}
-								nutr={nutrientHide}
-								index={index}
-								ingredients={recipe.recipe.ingredientLines}
-								setClass={setClass}
-							/>
-						</div>
-						<div>
-							{ingredientsHide[index] && (
-								<Ingredients
+				{isLoading ? (
+					<div className="loading" />
+				) : (
+					recipes.map((recipe, index) => (
+						<div className="outer-container">
+							<div className={backgroundClass}>
+								<Recipe
 									name={recipe.recipe.label}
-									ingredients={recipe.recipe.ingredientLines}
-									toggleIngredients={toggleIngredients}
-									ingred={ingredientsHide}
-									index={index}
-									setClass={setClass}
-								/>
-							)}
-							{nutrientHide[index] && (
-								<Nutrition
-									name={recipe.recipe.label}
+									image={recipe.recipe.image}
+									site={recipe.recipe.url}
 									toggleNutrition={toggleNutrition}
+									ingred={ingredientsHide}
+									toggleIngredients={toggleIngredients}
 									nutr={nutrientHide}
 									index={index}
+									ingredients={recipe.recipe.ingredientLines}
 									setClass={setClass}
 								/>
-							)}
+							</div>
+							<div>
+								{ingredientsHide[index] && (
+									<Ingredients
+										name={recipe.recipe.label}
+										ingredients={recipe.recipe.ingredientLines}
+										toggleIngredients={toggleIngredients}
+										ingred={ingredientsHide}
+										index={index}
+										setClass={setClass}
+									/>
+								)}
+								{nutrientHide[index] && (
+									<Nutrition
+										name={recipe.recipe.label}
+										toggleNutrition={toggleNutrition}
+										nutr={nutrientHide}
+										index={index}
+										setClass={setClass}
+									/>
+								)}
+							</div>
 						</div>
-					</div>
-				))}
+					))
+				)}
 			</div>
 		</div>
 	);
