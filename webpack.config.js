@@ -3,6 +3,7 @@
 const { resolve } = require('path')
 
 module.exports = {
+  mode: 'development',
   entry: ['babel-polyfill', './src/index'],
   output: {
     path: __dirname,
