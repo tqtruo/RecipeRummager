@@ -132,15 +132,56 @@ a:active {
 	right: 25%;
 	top: 25%;
 	bottom: 25%;
-	margin: auto;
 	xborder-radius: 20px;
 	background: white;
 	border: solid darkgreen 1px;
 	overflow-y: auto;
+	overflow-x: auto;
 }
 
-.nutrition-list > h2 {
+.nutrition-list > h2, h3 {
 	text-align: center;
+}
+
+.nutrTable {
+	display: flex;
+	margin: 10px;
+	justify-content: space-evenly;
+}
+
+.nutrTable > tbody {
+	border: solid black 5px;
+}
+
+.table-left{
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.daily {
+	text-align: right;
+	padding-left: 10px;
+	padding-right: 10px;
+	
+}
+
+.table-header{
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: .5px solid;
+}
+.carb-sub{
+	text-align: left;
+	text-indent: 25px;
+}
+
+.calories {
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	xborder-bottom: .5px solid;
 }
 
 .nutrition-list > button {
@@ -163,6 +204,7 @@ a:active {
 	color: white;
 	width: 40px;
 	height: 40px;
+	margin: auto;
 	border-radius: 20px;
 }
 
@@ -179,6 +221,7 @@ a:active {
 	border: solid darkgreen 1px;
 
 	overflow-y: auto;
+	overflow-x: auto;
 }
 
 .ingredients > h2 {
@@ -222,8 +265,11 @@ a:active {
 	flex-wrap: wrap;
 }
 
+
+/* SCROLL BAR */
 ::-webkit-scrollbar {
 	width: 8px;
+	height: 8px;
 }
 
 /* Track */
