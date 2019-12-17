@@ -29,7 +29,7 @@ const App = () => {
 	/* 	const [ caloriesLow, setCalorieMin ] = useState('');
 	const [ caloriesHigh, setCalorieMax ] = useState(''); */
 
-	const request = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=100&calories=591-722`;
+	const request = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=100`;
 
 	//Get All Recipes
 	async function fetchRecipes() {
@@ -86,7 +86,7 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<Navbar getQuery={getQuery} getSearch={getSearch}></Navbar>
+			<Navbar getQuery={getQuery} getSearch={getSearch} />
 			<div className="recipes">
 				{isLoading ? (
 					<div className="loading" />
@@ -126,30 +126,90 @@ const App = () => {
 										index={index}
 										setClass={setClass}
 										calories={recipe.recipe.calories}
-										fatAmount = {recipe.recipe.totalNutrients.FAT ? recipe.recipe.totalNutrients.FAT.quantity : 0}
-										fatDaily = {recipe.recipe.totalDaily.FAT ? recipe.recipe.totalDaily.FAT.quantity : 0}
-
-										fatAmount = {recipe.recipe.totalNutrients.FAT ? recipe.recipe.totalNutrients.FAT.quantity : 0}
-										fatDaily = {recipe.recipe.totalDaily.FAT.quantity}
-
-										cholAmount = {recipe.recipe.totalNutrients.CHOLE ? recipe.recipe.totalNutrients.CHOLE.quantity : 0}
-										cholDaily = {recipe.recipe.totalDaily.CHOLE ? recipe.recipe.totalDaily.CHOLE.quantity : 0}
-
-										sodiumAmount = {recipe.recipe.totalNutrients.NA ? recipe.recipe.totalNutrients.NA.quantity : 0}
-										sodiumDaily = {recipe.recipe.totalDaily.NA ? recipe.recipe.totalDaily.NA.quantity : 0}
-
-										carbAmount = {recipe.recipe.totalNutrients.CHOCDF ? recipe.recipe.totalNutrients.CHOCDF.quantity : 0}
-										carbDaily = {recipe.recipe.totalDaily.CHOCDF ? recipe.recipe.totalDaily.CHOCDF.quantity : 0}
-
-										fiberAmount = {recipe.recipe.totalNutrients.FIBTG ? recipe.recipe.totalNutrients.FIBTG.quantity : 0}
-										fiberDaily = {recipe.recipe.totalDaily.FIBTG ? recipe.recipe.totalDaily.FIBTG.quantity : 0}
-
-										sugarAmount = {recipe.recipe.totalNutrients.SUGAR ? recipe.recipe.totalNutrients.SUGAR.quantity : 0}
-
-										proteinAmount = {recipe.recipe.totalNutrients.PROCNT ? recipe.recipe.totalNutrients.PROCNT.quantity : 0}
-										proteinDaily = {recipe.recipe.totalDaily.PROCNT ? recipe.recipe.totalDaily.PROCNT.quantity : 0}
-
-										servings = {recipe.recipe.yield}
+										fatAmount={
+											recipe.recipe.totalNutrients.FAT ? (
+												recipe.recipe.totalNutrients.FAT.quantity
+											) : (
+												0
+											)
+										}
+										fatDaily={
+											recipe.recipe.totalDaily.FAT ? recipe.recipe.totalDaily.FAT.quantity : 0
+										}
+										fatAmount={
+											recipe.recipe.totalNutrients.FAT ? (
+												recipe.recipe.totalNutrients.FAT.quantity
+											) : (
+												0
+											)
+										}
+										fatDaily={recipe.recipe.totalDaily.FAT.quantity}
+										cholAmount={
+											recipe.recipe.totalNutrients.CHOLE ? (
+												recipe.recipe.totalNutrients.CHOLE.quantity
+											) : (
+												0
+											)
+										}
+										cholDaily={
+											recipe.recipe.totalDaily.CHOLE ? recipe.recipe.totalDaily.CHOLE.quantity : 0
+										}
+										sodiumAmount={
+											recipe.recipe.totalNutrients.NA ? (
+												recipe.recipe.totalNutrients.NA.quantity
+											) : (
+												0
+											)
+										}
+										sodiumDaily={
+											recipe.recipe.totalDaily.NA ? recipe.recipe.totalDaily.NA.quantity : 0
+										}
+										carbAmount={
+											recipe.recipe.totalNutrients.CHOCDF ? (
+												recipe.recipe.totalNutrients.CHOCDF.quantity
+											) : (
+												0
+											)
+										}
+										carbDaily={
+											recipe.recipe.totalDaily.CHOCDF ? (
+												recipe.recipe.totalDaily.CHOCDF.quantity
+											) : (
+												0
+											)
+										}
+										fiberAmount={
+											recipe.recipe.totalNutrients.FIBTG ? (
+												recipe.recipe.totalNutrients.FIBTG.quantity
+											) : (
+												0
+											)
+										}
+										fiberDaily={
+											recipe.recipe.totalDaily.FIBTG ? recipe.recipe.totalDaily.FIBTG.quantity : 0
+										}
+										sugarAmount={
+											recipe.recipe.totalNutrients.SUGAR ? (
+												recipe.recipe.totalNutrients.SUGAR.quantity
+											) : (
+												0
+											)
+										}
+										proteinAmount={
+											recipe.recipe.totalNutrients.PROCNT ? (
+												recipe.recipe.totalNutrients.PROCNT.quantity
+											) : (
+												0
+											)
+										}
+										proteinDaily={
+											recipe.recipe.totalDaily.PROCNT ? (
+												recipe.recipe.totalDaily.PROCNT.quantity
+											) : (
+												0
+											)
+										}
+										servings={recipe.recipe.yield}
 									/>
 								)}
 							</div>
