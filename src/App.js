@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Recipe from './Recipe';
 import Nutrition from './Nutrition';
 import Ingredients from './Ingredients';
+import Navbar from './Navbar';
 
 const App = () => {
 	//API ID/KEY
@@ -28,7 +29,7 @@ const App = () => {
 	/* 	const [ caloriesLow, setCalorieMin ] = useState('');
 	const [ caloriesHigh, setCalorieMax ] = useState(''); */
 
-	const request = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=100`;
+	const request = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=100&calories=591-722`;
 
 	//Get All Recipes
 	async function fetchRecipes() {
@@ -46,7 +47,6 @@ const App = () => {
 			newIngred.push(false);
 		}
 		toggleIngredients(newIngred);
-
 		//Setting all nutritioninfo to be hidden
 		nutrientHide.length = 0;
 		let newNutr = [];
@@ -86,12 +86,7 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<form className="search-form" onSubmit={getQuery}>
-				<input className="search-box" type="text" placeholder="Search for a recipe!" onChange={getSearch} />
-				<button className="search-button" type="submit">
-					Search
-				</button>
-			</form>
+			<Navbar getQuery={getQuery} getSearch={getSearch}></Navbar>
 			<div className="recipes">
 				{isLoading ? (
 					<div className="loading" />

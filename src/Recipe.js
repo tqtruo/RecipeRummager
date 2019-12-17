@@ -32,7 +32,7 @@ const Recipe = (props) => {
 			<img src={props.image} />
 			<button onClick={() => nutrButton()}>Nutrition</button>
 			<button onClick={() => ingredButton()}>Ingredients</button>
-			<a href={props.site} target="_blank">
+			<a href={props.site} target="_blank" rel="noopener noreferrer">
 				Recipe
 			</a>
 		</div>
