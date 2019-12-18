@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = (props) => {
 	return (
-		<ul>
+		<ul className="navbar-list">
 			<li className="home">Home</li>
 			<li className="about">About</li>
 			<li className="searchform">
