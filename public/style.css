@@ -2,9 +2,10 @@ body {
 	background-color: beige;
 	display: flex;
 	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
 }
 
-.search-form {
+/* .search-form {
 	display: inline-flex;
 	position: fixed;
 	left: 25%;
@@ -20,21 +21,42 @@ body {
 	text-align: center;
 }
 
+*/
+
+.search-box {
+	width: 0;
+	border-radius: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	xborder: solid #4caf50;
+	transition: 0.4s;
+	height: 20px;
+	border: none;
+	outline: none;
+}
+
 .search-button {
-	border-radius: 10px;
-	font-size: 20px;
-	width: 100px;
-	text-align: center;
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
-	text-decoration: none;
-	background-color: white;
-	border: solid #4caf50 1px;
+	border: solid #4caf50;
+	background: #4caf50;
+	color: white;
+	font-size: 16px;
 }
 
 .search-button:hover {
 	background-color: #4caf50;
-	color: white;
+	color: black;
+}
+
+.search-form:hover > .search-box {
+	color: black;
+	width: 200px;
+	padding: 2px 8px;
+}
+
+.search-form:hover > .search-button {
+	color: black;
 }
 
 .loading {
@@ -139,7 +161,8 @@ a:active {
 	overflow-x: auto;
 }
 
-.nutrition-list > h2, h3 {
+.nutrition-list > h2,
+h3 {
 	text-align: center;
 }
 
@@ -153,7 +176,7 @@ a:active {
 	border: solid black 5px;
 }
 
-.table-left{
+.table-left {
 	text-align: left;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -163,16 +186,15 @@ a:active {
 	text-align: right;
 	padding-left: 10px;
 	padding-right: 10px;
-	
 }
 
-.table-header{
+.table-header {
 	text-align: left;
 	padding-left: 5px;
 	padding-right: 5px;
 	border-bottom: .5px solid;
 }
-.carb-sub{
+.carb-sub {
 	text-align: left;
 	text-indent: 25px;
 }
@@ -265,7 +287,6 @@ a:active {
 	flex-wrap: wrap;
 }
 
-
 /* SCROLL BAR */
 ::-webkit-scrollbar {
 	width: 8px;
@@ -288,4 +309,43 @@ a:active {
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: #4caf50;
+}
+
+ul {
+	list-style-type: none;
+	position: fixed;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #4caf50;
+}
+
+li {
+	float: left;
+	display: block;
+	padding: 12px 15px;
+	text-align: center;
+	color: white;
+}
+li:hover {
+	float: left;
+	display: block;
+	text-align: center;
+	padding: 12px 15px;
+	color: black;
+}
+
+.searchform {
+	display: block;
+	padding: 10px 15px;
+	float: right;
+	color: white;
+}
+
+.searchform:hover {
+	display: block;
+	padding: 10px 15px;
+	float: right;
+	color: black;
 }
