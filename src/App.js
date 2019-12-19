@@ -3,6 +3,7 @@ import Recipe from './Recipe';
 import Nutrition from './Nutrition';
 import Ingredients from './Ingredients';
 import Navbar from './Navbar';
+import About from './About';
 
 const App = () => {
 	//API ID/KEY
@@ -26,6 +27,8 @@ const App = () => {
 	//Loading animation
 	const [ isLoading, setLoading ] = useState(false);
 
+	//About Page
+	const [ isAbout, setAbout ] = useState(false);
 	/* 	const [ caloriesLow, setCalorieMin ] = useState('');
 	const [ caloriesHigh, setCalorieMax ] = useState(''); */
 
@@ -33,9 +36,11 @@ const App = () => {
 
 	//Get All Recipes
 	async function fetchRecipes() {
+		setAbout(false);
 		setLoading(true);
 		const response = await fetch(request);
 		const data = await response.json();
+		document.body.style.background = 'beige';
 		setLoading(false);
 		console.log(data);
 		setRecipes(data.hits);
@@ -86,10 +91,18 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<Navbar getQuery={getQuery} getSearch={getSearch} />
+			<Navbar
+				getQuery={getQuery}
+				getSearch={getSearch}
+				setAbout={setAbout}
+				recipes={recipes}
+				setRecipes={setRecipes}
+			/>
 			<div className="recipes">
 				{isLoading ? (
 					<div className="loading" />
+				) : isAbout ? (
+					<About />
 				) : (
 					recipes.map((recipe, index) => (
 						<div className="outer-container">

@@ -3,6 +3,8 @@ body {
 	display: flex;
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
+	background: url('Food.jpg') no-repeat;
+	background-size: cover;
 }
 
 /* .search-form {
@@ -348,4 +350,20 @@ h3 {
 	padding: 10px 15px;
 	float: right;
 	color: black;
+}
+
+.home {
+	cursor: pointer;
+}
+
+.about {
+	cursor: pointer;
+}
+
+.summary {
+	position: fixed;
+	top: 15%;
+	left: 2%;
+	font-size: 3em;
+	right: 50%;
 }
