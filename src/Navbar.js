@@ -2,20 +2,20 @@ import React from 'react';
 
 const Navbar = (props) => {
 	const homeClick = () => {
-		document.body.style.background = "url('Food.jpg') no-repeat";
+		document.body.style.background = "url('Food.jpg') repeat";
 		document.body.style.backgroundSize = 'cover';
 		props.setAbout(false);
 		props.setRecipes([]);
 	};
 
 	const aboutClick = () => {
-		document.body.style.background = 'beige';
+		document.body.style.background = "url('Utensils.jpg') repeat";
+		document.body.style.backgroundSize = 'cover';
 		props.setAbout(true);
 	};
 
 	const resultsClick = () => {
 		props.setAbout(false);
-		// props.setRecipes(props.recipes);
 	};
 	return (
 		<ul className="navbar-list">
@@ -25,7 +25,7 @@ const Navbar = (props) => {
 			<li className="about" onClick={() => aboutClick()}>
 				About
 			</li>
-			{props.recipes.length > 0 ? <li onClick={() => resultsClick()}>Results</li> : ''}
+			{props.recipes.length > 0 ? <li className="result" onClick={() => resultsClick()}>Results</li> : ''}
 			<li className="searchform">
 				<form className="search-form" onSubmit={props.getQuery}>
 					<input

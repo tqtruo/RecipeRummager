@@ -3,7 +3,7 @@ body {
 	display: flex;
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
-	background: url('Food.jpg') no-repeat;
+	background: url('Food.jpg') repeat;
 	background-size: cover;
 }
 
@@ -360,10 +360,50 @@ h3 {
 	cursor: pointer;
 }
 
+.result {
+	cursor: pointer;
+}
+
 .summary {
 	position: fixed;
 	top: 15%;
-	left: 2%;
-	font-size: 3em;
-	right: 50%;
+	left: 50%;
+	right: 10%;
+	font-size: 2em;
+	line-height: 1.15em;
+	color: black;
+	text-shadow: 1px 1px white
+}
+
+.learn > a > img {
+	position: fixed;
+	height: 300px;
+	width: 450px;
+	top: 50%;
+	left: 55%;
+	right: 10%;
+	/* opacity: 1; */
+}
+
+.learn > a > img:hover {
+/* 	position: fixed;
+	height: 300px;
+	width: 300px;
+	top: 50%;
+	left: 55%;
+	right: 20%; */
+	/* opacity: .8; */
+	filter: brightness(200%);
+	-webkit-filter: brightness(200%);
+}
+
+.learnmore {
+	position: fixed;
+	font-size: 2em;
+	top: 42%;
+	left: 58%;
+	right: 10%;
+	color: black;
+	text-shadow: 1px 1px white
+
 }
