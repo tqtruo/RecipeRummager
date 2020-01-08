@@ -15,6 +15,8 @@ const App = () => {
 	const [ search, setSearch ] = useState('');
 	const [ query, setQuery ] = useState('');
 
+	const [ recipeResults, setResults ] = useState([]);
+
 	//Nutrition popup
 	const [ nutrientHide, toggleNutrition ] = useState([]);
 
@@ -44,6 +46,7 @@ const App = () => {
 		setLoading(false);
 		console.log(data);
 		setRecipes(data.hits);
+		setResults(data.hits);
 
 		//Setting all the ingredients to be hidden
 		ingredientsHide.length = 0;
@@ -97,6 +100,7 @@ const App = () => {
 				setAbout={setAbout}
 				recipes={recipes}
 				setRecipes={setRecipes}
+				recipeResults={recipeResults}
 			/>
 			<div className="recipes">
 				{isLoading ? (

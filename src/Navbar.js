@@ -12,10 +12,13 @@ const Navbar = (props) => {
 		document.body.style.background = "url('Utensils.jpg') repeat";
 		document.body.style.backgroundSize = 'cover';
 		props.setAbout(true);
+		console.log(props.recipeResults);
 	};
 
 	const resultsClick = () => {
+		document.body.style.background = 'beige';
 		props.setAbout(false);
+		props.setRecipes(props.recipeResults);
 	};
 	return (
 		<ul className="navbar-list">
@@ -25,7 +28,13 @@ const Navbar = (props) => {
 			<li className="about" onClick={() => aboutClick()}>
 				About
 			</li>
-			{props.recipes.length > 0 ? <li className="result" onClick={() => resultsClick()}>Results</li> : ''}
+			{props.recipeResults.length > 0 ? (
+				<li className="result" onClick={() => resultsClick()}>
+					Results
+				</li>
+			) : (
+				''
+			)}
 			<li className="searchform">
 				<form className="search-form" onSubmit={props.getQuery}>
 					<input
